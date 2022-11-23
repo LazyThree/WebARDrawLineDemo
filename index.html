@@ -32,8 +32,8 @@
                     console.log(`More or less ${crd.accuracy} meters.`);
                     document.getElementById("#gpsinfo").innerHTML = `Latitude : ${crd.latitude}, longitude: ${crd.longitude} (accuracy ${crd.accuracy.toFixed(2)} m.)`
 
-                    const firstCoords = shiftPositionBy(crd, -50, 25);
-                    const secondCoords = shiftPositionBy(crd, 25, 50);
+                    const firstCoords = shiftPositionBy(crd, -500, 250);
+                    const secondCoords = shiftPositionBy(crd, 250, 500);
 
                     firstObj.setAttribute("gps-entity-place", {
                         "latitude": firstCoords.lat,
