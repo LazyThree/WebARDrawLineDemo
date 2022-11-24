@@ -43,6 +43,20 @@
                         "latitude": secondCoords.lat,
                         "longitude": secondCoords.lon
                     })
+                    // 30.265320
+                    //120.120650
+                    //重新设置一下经纬度
+                    firstObj.setAttribute("gps-entity-place", {
+                        "latitude": 30.265320,
+                        "longitude": 120.120650
+                    })
+                    
+                    
+                    // 30.2650767298310; longitude: 120.1211465522642;"
+                    secondObj.setAttribute("gps-entity-place", {
+                        "latitude": 30.2650767298310,
+                        "longitude": 120.1211465522642
+                    })
                 }
 
                 navigator.geolocation.getCurrentPosition(success,
