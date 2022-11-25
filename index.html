@@ -32,8 +32,8 @@
                     console.log(`More or less ${crd.accuracy} meters.`);
                     document.getElementById("#gpsinfo").innerHTML = `Latitude : ${crd.latitude}, longitude: ${crd.longitude} (accuracy ${crd.accuracy.toFixed(2)} m.)`
 
-                    const firstCoords = shiftPositionBy(crd, -500, 250);
-                    const secondCoords = shiftPositionBy(crd, 250, 500);
+                    const firstCoords = shiftPositionBy(crd, -50, 25);
+                    const secondCoords = shiftPositionBy(crd, 25, 50);
 
                     firstObj.setAttribute("gps-entity-place", {
                         "latitude": firstCoords.lat,
@@ -43,7 +43,6 @@
                         "latitude": secondCoords.lat,
                         "longitude": secondCoords.lon
                     })
-            
                 }
 
                 navigator.geolocation.getCurrentPosition(success,
@@ -124,14 +123,13 @@
 </head>
 
 <body>
-
     <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
         relative-position arc>
         <a-entity id="first">
             <a-sphere scale="1 1 1" color="blue"></a-sphere>
         </a-entity>
         <a-entity id="tunnel" tunnel>
-            <a-cylinder color="yellow" radius="2" rotation="0 90 -90"></a-cylinder>
+            <a-cylinder color="red" radius="2" rotation="0 90 -90"></a-cylinder>
         </a-entity>
         <a-entity id="second">
             <a-sphere scale="1 1 1" color="green"></a-sphere>
