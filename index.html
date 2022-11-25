@@ -43,20 +43,7 @@
                         "latitude": secondCoords.lat,
                         "longitude": secondCoords.lon
                     })
-                    // 30.265320
-                    //120.120650
-                    //重新设置一下经纬度
-                    firstObj.setAttribute("gps-entity-place", {
-                        "latitude": 30.265320,
-                        "longitude": 120.120650
-                    })
-                    
-                    
-                    // 30.2650767298310; longitude: 120.1211465522642;"
-                    secondObj.setAttribute("gps-entity-place", {
-                        "latitude": 30.2650767298310,
-                        "longitude": 120.1211465522642
-                    })
+            
                 }
 
                 navigator.geolocation.getCurrentPosition(success,
@@ -137,11 +124,7 @@
 </head>
 
 <body>
-    <div style='top: 10px; text-align: center; z-index: 100; color: wheat; position: absolute'>
-        Source code <a href="https://github.com/gftruj/webzamples/tree/master/ar">here</a><br>
-        <p id="#gpsinfo"></p>
-        a-frame spheres, cylinder, and a THREE.js generated arc. <br>
-    </div>
+
     <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
         relative-position arc>
         <a-entity id="first">
