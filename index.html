@@ -10,6 +10,8 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script>
         function shiftPositionBy({ latitude, longitude }, dx, dy) {
+            latitude = 30.2654003;
+            longitude = 120.1207295
             const r_earth = 6378 * 1000;
             const new_latitude = latitude + (dx / r_earth) * (180 / Math.PI);
             const new_longitude = longitude + (dy / r_earth) * (180 / Math.PI) / Math.cos(latitude * Math.PI / 180);
@@ -25,8 +27,6 @@
 
                 function success(pos) {
                     var crd = pos.coords;
-                    var lat = 30.265730;
-                    var lng = 120.120770;
                     console.log('Your current position is:');
                     console.log(`Latitude : ${crd.latitude}`);
                     console.log(`Longitude: ${crd.longitude}`);
@@ -132,13 +132,13 @@
     <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
         relative-position arc>
         <a-entity id="first">
-            <a-sphere scale="5 5 5" color="blue"></a-sphere>
+            <a-sphere scale="2 2 2" color="blue"></a-sphere>
         </a-entity>
         <a-entity id="tunnel" tunnel>
             <a-cylinder color="red" radius="4" rotation="0 90 -90"></a-cylinder>
         </a-entity>
         <a-entity id="second">
-            <a-sphere scale="5 5 5" color="green"></a-sphere>
+            <a-sphere scale="2 2 2" color="green"></a-sphere>
         </a-entity>
         <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
