@@ -10,8 +10,6 @@
     <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
     <script>
         function shiftPositionBy({ latitude, longitude }, dx, dy) {
-            latitude = 30.2654003;
-            longitude = 120.1207295
             const r_earth = 6378 * 1000;
             const new_latitude = latitude + (dx / r_earth) * (180 / Math.PI);
             const new_longitude = longitude + (dy / r_earth) * (180 / Math.PI) / Math.cos(latitude * Math.PI / 180);
@@ -57,43 +55,7 @@
                     })
             }
         })
-        /*
-        AFRAME.registerComponent("arc", {
-            init: function () {
-                const firstObj = document.getElementById("first");
-                const secondObj = document.getElementById("second")
-                const firstPos = new THREE.Vector3();
-                const secondPos = new THREE.Vector3();
-                const el = this.el
-                // gps-entity-place-added fire too early?
-                // gps-entity-place-update-positon doesnt fire at all
-                const idx = setInterval(() => {
-                    firstPos.copy(firstObj.object3D.position)
-                    middle = firstPos.clone();
-                    secondPos.copy(secondObj.object3D.position)
-
-                    const distance = firstPos.distanceTo(secondPos)
-                    if (!distance) return;
-                    console.log("anchors ready")
-                    clearInterval(idx);
-                    middle.multiplyScalar(-1).add(secondPos).multiplyScalar(1 / 2)
-                    middle.y = 75;
-
-                    const curve = new THREE.CatmullRomCurve3([
-                        secondPos,
-                        middle,
-                        firstPos
-                    ]);
-
-                    const geometry = new THREE.TubeGeometry(curve, 20, 2, 8, false);
-                    const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
-                    const mesh = new THREE.Mesh(geometry, material);
-                    el.object3D.add(mesh)
-                    const line = new THREE.Line(geometry, material);
-                }, 500)
-
-            }
-        })*/
+        
         AFRAME.registerComponent("tunnel", {
             init: function () {
                 const firstObj = document.getElementById("first");
