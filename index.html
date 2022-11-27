@@ -33,7 +33,7 @@
                     document.getElementById("#gpsinfo").innerHTML = `Latitude : ${crd.latitude}, longitude: ${crd.longitude} (accuracy ${crd.accuracy.toFixed(2)} m.)`
 
                     const firstCoords = shiftPositionBy(crd, -50, 25);
-                    const secondCoords = shiftPositionBy(crd, 25, 50);
+                    const secondCoords = shiftPositionBy(crd, 50, 25);
 
                     firstObj.setAttribute("gps-entity-place", {
                         "latitude": firstCoords.lat,
