@@ -25,15 +25,16 @@
 
                 function success(pos) {
                     var crd = pos.coords;
-
+                    var lat = 30.265730;
+                    var lng = 120.120770;
                     console.log('Your current position is:');
                     console.log(`Latitude : ${crd.latitude}`);
                     console.log(`Longitude: ${crd.longitude}`);
                     console.log(`More or less ${crd.accuracy} meters.`);
                     document.getElementById("#gpsinfo").innerHTML = `Latitude : ${crd.latitude}, longitude: ${crd.longitude} (accuracy ${crd.accuracy.toFixed(2)} m.)`
-
-                    const firstCoords = shiftPositionBy(crd, -50, 25);
-                    const secondCoords = shiftPositionBy(crd, 25, 50);
+                    var latlng ={30.265730,120.120770};
+                    const firstCoords = shiftPositionBy(latlng, -50, 25);
+                    const secondCoords = shiftPositionBy(latlng, 25, 50);
 
                     firstObj.setAttribute("gps-entity-place", {
                         "latitude": firstCoords.lat,
