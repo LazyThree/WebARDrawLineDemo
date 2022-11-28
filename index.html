@@ -30,7 +30,7 @@
                     console.log(`Longitude: ${crd.longitude}`);
                     console.log(`More or less ${crd.accuracy} meters.`);
                     document.getElementById("#gpsinfo").innerHTML = `Latitude : ${crd.latitude}, longitude: ${crd.longitude} (accuracy ${crd.accuracy.toFixed(2)} m.)`
-                    var latlng ={30.265730,120.120770};
+                   
                     const firstCoords = shiftPositionBy(crd, -50, 25);
                     const secondCoords = shiftPositionBy(crd, 25, 50);
 
