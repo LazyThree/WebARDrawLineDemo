@@ -7,7 +7,7 @@
     <title>GeoAR.js demo</title>
     <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
-    <script src="https://raw.githack.com/AR-js-org/AR.js/master/aframe/build/aframe-ar-nft.js"></script>
+    <script src="https://raw.githack.com/AR-js-org/AR.js/3.3.1/aframe/build/aframe-ar-nft.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
     <script>
         function shiftPositionBy({ latitude, longitude }, dx, dy) {
@@ -101,7 +101,10 @@
                 const secondPos = new THREE.Vector3();
                 const el = this.el
                 const cylinder = this.el.querySelector("a-cylinder")
-                
+                cylinder.addEventListener('click', function()
+                {
+                    alert("点击了管道，触发了点击事件!");
+                })
                 const elem = this.el.querySelector("#cylinder_1")
     
                 elem.addEventListener("click", function() {
@@ -147,6 +150,7 @@
         <p id="#gpsinfo"></p>
     </div>
     <a-scene 
+    emitevents="true"
     cursor="rayOrigin: mouse" 
     vr-mode-ui="enabled: false" 
     arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
@@ -156,7 +160,7 @@
             <a-sphere scale="5 5 5" color="blue" cursor-listener></a-sphere>
         </a-entity>
         <a-entity id="tunnel" tunnel>
-            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1" cursor-listener></a-cylinder>
+            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1"></a-cylinder>
         </a-entity>
         <a-entity id="second">
             <a-sphere scale="5 5 5" color="green" cursor-listener></a-sphere>
