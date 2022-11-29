@@ -102,7 +102,10 @@
                 const el = this.el
                 const cylinder = this.el.querySelector("a-cylinder")
         
-
+    
+                cylinder.addEventListener("click", function() {
+                    alert("点击了管道");
+                })
                 const idx = setInterval(() => {
                     firstPos.copy(firstObj.object3D.position)
                     secondPos.copy(secondObj.object3D.position)
@@ -121,16 +124,7 @@
                
             }
         })
-        AFRAME.registerComponent("cylinder_1", {
-            init: function() {
-            elem = this.el.querySelector("cylinder_1");
-            // on each click - toggle the visibility
-            this.el.addEventListener("click", function() {
-                alert("点击了管道");
-            })
-            }
-        })
-
+    
     </script>
 </head>
 
