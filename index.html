@@ -128,6 +128,15 @@
 
 
         //添加点击事件监听器
+        AFRAME.registerComponent("cursor-listener",{
+            init: function()
+            {
+                this.el.addEventListener('click',function(evt)
+                {
+                    alert("触发了点击事件!");
+                })
+            }
+        })
 
     
     </script>
@@ -143,16 +152,16 @@
     arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     relative-position arc
     >
-        <a-entity id="first" cursor-listener>
-            <a-sphere scale="5 5 5" color="blue"></a-sphere>
+        <a-entity id="first">
+            <a-sphere scale="5 5 5" color="blue" cursor-listener></a-sphere>
         </a-entity>
-        <a-entity id="tunnel" cursor-listener tunnel>
-            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1" ></a-cylinder>
+        <a-entity id="tunnel" tunnel>
+            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1" cursor-listener></a-cylinder>
         </a-entity>
-        <a-entity id="second" cursor-listener>
-            <a-sphere scale="5 5 5" color="green"></a-sphere>
+        <a-entity id="second">
+            <a-sphere scale="5 5 5" color="green" cursor-listener></a-sphere>
         </a-entity>
-        <a-camera gps-camera cursor-listener rotation-reader> </a-camera>
+        <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
 </body>
 
