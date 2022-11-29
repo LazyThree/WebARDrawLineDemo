@@ -101,10 +101,7 @@
                 const secondPos = new THREE.Vector3();
                 const el = this.el
                 const cylinder = this.el.querySelector("a-cylinder")
-                
-                cylinder.addEventListener("click", evt => {
-                alert("触发了点击事件");
-                })
+        
 
                 const idx = setInterval(() => {
                     firstPos.copy(firstObj.object3D.position)
@@ -124,6 +121,16 @@
                
             }
         })
+        AFRAME.registerComponent("pipe1", {
+            init: function() {
+            // on each click - toggle the visibility
+            this.el.addEventListener("click", evt => {
+                // if the text is invalid - lets get outta here
+                alert("点击了第二个管道");
+            })
+            }
+        })
+
     </script>
 </head>
 
@@ -142,7 +149,7 @@
             <a-sphere scale="5 5 5" color="blue"></a-sphere>
         </a-entity>
         <a-entity id="tunnel" tunnel>
-            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1"></a-cylinder>
+            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1" pipe1></a-cylinder>
         </a-entity>
         <a-entity id="second">
             <a-sphere scale="5 5 5" color="green"></a-sphere>
