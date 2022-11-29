@@ -19,6 +19,28 @@
                 lon: new_longitude
             }
         }
+        
+        AFRAME.registerComponent("sphere1",{
+            init:function()
+            {
+                const curm = this.el.querySelector("a-sphere")
+                curm.addEventListener('click',function(){
+                    var elem = getElementById("#gpsinfo");
+                    elem.innerHTML ="点击了蓝色小球";
+                })
+            }
+        })
+        AFRAME.registerComponent("sphere2",{
+            init:function()
+            {
+                const curm = this.el.querySelector("a-sphere")
+                curm.addEventListener('click',function(){
+                    var elem = getElementById("#gpsinfo");
+                    elem.innerHTML ="点击了绿色小球";
+                })
+            }
+        })
+        
         AFRAME.registerComponent("relative-position", {
             init: function () {
                 const firstObj = document.getElementById("first");
@@ -150,26 +172,7 @@
         })*/
         
         
-         AFRAME.registerComponent("sphere1",{
-            init:function()
-            {
-                const curm = this.el.querySelector("a-sphere")
-                curm.addEventListener('click',function(){
-                    var elem = getElementById("#gpsinfo");
-                    elem.innerHTML ="点击了蓝色小球";
-                })
-            }
-        })
-        AFRAME.registerComponent("sphere2",{
-            init:function()
-            {
-                const curm = this.el.querySelector("a-sphere")
-                curm.addEventListener('click',function(){
-                    var elem = getElementById("#gpsinfo");
-                    elem.innerHTML ="点击了绿色小球";
-                })
-            }
-        })
+
 
     </script>
 </head>
