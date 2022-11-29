@@ -103,7 +103,7 @@
                 const cylinder = this.el.querySelector("a-cylinder")
                 
                 cylinder.addEventListener("click", evt => {
-                    alert("触发了点击事件");
+                alert("触发了点击事件");
                 })
 
                 const idx = setInterval(() => {
@@ -129,12 +129,15 @@
 
 <body>
     <div style='top: 10px; text-align: center; z-index: 100; color: wheat; position: absolute'>
-        Source code <a href="https://github.com/gftruj/webzamples/tree/master/ar">here</a><br>
         <p id="#gpsinfo"></p>
-        a-frame spheres, cylinder, and a THREE.js generated arc. <br>
     </div>
-    <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
-        relative-position arc cursor="rayOrigin: mouse" raycaster="objects: a-entity">
+    <a-scene 
+    cursor="rayOrigin: mouse" 
+    raycaster="objects: a-entity"
+    vr-mode-ui="enabled: false" 
+    arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+    relative-position arc
+    >
         <a-entity id="first">
             <a-sphere scale="5 5 5" color="blue"></a-sphere>
         </a-entity>
