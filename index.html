@@ -104,7 +104,7 @@
                 cylinder.addEventListener('click', function()
                 {
                     //alert("点击了管道，触发了点击事件!");
-                    var elem = document.getElementById("gpsinfo");
+                    var elem = document.getElementById("#gpsinfo");
                     elem.innerHTML="当前查看的管道是一根红色的管道";
                 })
                 const idx = setInterval(() => {
@@ -128,16 +128,18 @@
 
 
         //添加点击事件监听器
+        /*
         AFRAME.registerComponent("cursor-listener",{
             init: function()
             {
                 this.el.addEventListener('click',function(evt)
                 {
+                   
                     alert("触发了点击事件!");
                 })
             }
         })
-
+        */
     
     </script>
 </head>
