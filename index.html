@@ -121,12 +121,12 @@
                
             }
         })
-        AFRAME.registerComponent("pipe1", {
+        AFRAME.registerComponent("cylinder_1", {
             init: function() {
+            elem = this.el.querySelector("cylinder_1");
             // on each click - toggle the visibility
-            this.el.addEventListener("click", evt => {
-                // if the text is invalid - lets get outta here
-                alert("点击了第二个管道");
+            this.el.addEventListener("click", function() {
+                alert("点击了管道");
             })
             }
         })
@@ -149,7 +149,7 @@
             <a-sphere scale="5 5 5" color="blue"></a-sphere>
         </a-entity>
         <a-entity id="tunnel" tunnel>
-            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1" pipe1></a-cylinder>
+            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1"></a-cylinder>
         </a-entity>
         <a-entity id="second">
             <a-sphere scale="5 5 5" color="green"></a-sphere>
