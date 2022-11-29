@@ -133,7 +133,7 @@
         a-frame spheres, cylinder, and a THREE.js generated arc. <br>
     </div>
     <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
-        relative-position arc>
+        relative-position arc cursor="rayOrigin: mouse" raycaster="objects: a-entity">
         <a-entity id="first">
             <a-sphere scale="5 5 5" color="blue"></a-sphere>
         </a-entity>
