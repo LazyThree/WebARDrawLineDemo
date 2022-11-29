@@ -124,6 +124,19 @@
                
             }
         })
+
+
+        //添加点击事件监听器
+        AFRAME.registerComponent('clickhandler', {
+
+        init: function() {
+            const animatedMarker = document.querySelector("#tunnel");
+            const aEntity = document.querySelector("#cylinder");
+            animatedMarker.addEventListener('click', function(){
+                    alert("!!!!!");
+                }
+            );
+        }});
     
     </script>
 </head>
@@ -139,13 +152,13 @@
     arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     relative-position arc
     >
-        <a-entity id="first">
+        <a-entity clickhandler id="first">
             <a-sphere scale="5 5 5" color="blue"></a-sphere>
         </a-entity>
-        <a-entity id="tunnel" tunnel>
-            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1"></a-cylinder>
+        <a-entity clickhandler id="tunnel" tunnel>
+            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1" cylinder></a-cylinder>
         </a-entity>
-        <a-entity id="second">
+        <a-entity clickhandler id="second">
             <a-sphere scale="5 5 5" color="green"></a-sphere>
         </a-entity>
         <a-camera gps-camera rotation-reader> </a-camera>
