@@ -96,6 +96,29 @@
                
             }
         })
+        //添加一个小球
+        AFRAME.registerComponent("sphere1",{
+            init:function()
+            {
+                const sphere = this.el.querySelector("a-sphere")
+                
+                sphere.addEventListener('click',function(){
+                    var elem = getElementById("#gpsinfo");
+                    elem.innerHTML ="点击了蓝色小球";
+                })
+            }
+        })
+        AFRAME.registerComponent("sphere2",{
+            init:function()
+            {
+                const sphere = this.el.querySelector("a-sphere")
+                sphere.addEventListener('click',function(){
+                    var elem = getElementById("#gpsinfo");
+                    elem.innerHTML ="点击了绿色小球";
+                })
+            }
+        })
+        
         AFRAME.registerComponent("tunnel", {
             init: function () {
                 const firstObj = document.getElementById("first");
@@ -151,27 +174,7 @@
         })
         */
         
-        //添加一个小球
-        AFRAME.registerComponent("sphere1",{
-            init:function()
-            {
-                
-                this.el.addEventListener('click',function(){
-                    var elem = getElementById("#gpsinfo");
-                    elem.innerHTML ="点击了蓝色小球";
-                })
-            }
-        })
-        AFRAME.registerComponent("sphere2",{
-            init:function()
-            {
-                
-                this.el.addEventListener('click',function(){
-                    var elem = getElementById("#gpsinfo");
-                    elem.innerHTML ="点击了绿色小球";
-                })
-            }
-        })
+
         
 
 
@@ -190,13 +193,13 @@
     relative-position arc
     >
         <a-entity id="first" sphere1>
-            <a-sphere scale="5 5 5" color="blue" id="sphere1" cursor-listener></a-sphere>
+            <a-sphere scale="5 5 5" color="blue"></a-sphere>
         </a-entity>
         <a-entity id="tunnel" tunnel>
             <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1"></a-cylinder>
         </a-entity>
         <a-entity id="second" sphere2>
-            <a-sphere scale="5 5 5" color="green" id="sphere2" cursor-listener></a-sphere>
+            <a-sphere scale="5 5 5" color="green"></a-sphere>
         </a-entity>
         <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
