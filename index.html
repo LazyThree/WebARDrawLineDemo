@@ -101,9 +101,10 @@
                 const secondPos = new THREE.Vector3();
                 const el = this.el
                 const cylinder = this.el.querySelector("a-cylinder")
-        
+                
+                const elem = this.el.querySelector("#cylinder_1")
     
-                cylinder.addEventListener("click", function() {
+                elem.addEventListener("click", function() {
                     alert("点击了管道");
                 })
                 const idx = setInterval(() => {
