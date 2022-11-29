@@ -129,6 +129,7 @@
 
 
         //添加点击事件监听器
+        /*
         AFRAME.registerComponent("cursor-listener",{
             init: function()
             {   
@@ -146,7 +147,7 @@
 
                 })
             }
-        })
+        })*/
         
         
          AFRAME.registerComponent("first",{
@@ -187,7 +188,7 @@
         <a-entity id="first" first>
             <a-sphere scale="5 5 5" color="blue" id="sphere1"></a-sphere>
         </a-entity>
-        <a-entity id="tunnel" tunnel cursor-listener>
+        <a-entity id="tunnel" tunnel>
             <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1"></a-cylinder>
         </a-entity>
         <a-entity id="second" second>
