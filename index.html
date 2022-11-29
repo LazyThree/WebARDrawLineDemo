@@ -127,19 +127,26 @@
         })
 
 
+
         //添加点击事件监听器
-        /*
         AFRAME.registerComponent("cursor-listener",{
             init: function()
-            {
+            {   
                 this.el.addEventListener('click',function(evt)
                 {
-                   
-                    alert("触发了点击事件!");
+
+                    if(this.el.id=="first")
+                    {
+                        alert("点击了蓝色小球!");
+                }
+                    else
+                    {
+                        alert("点击了绿色小球!");
+                }
+
                 })
             }
         })
-        */
     
     </script>
 </head>
