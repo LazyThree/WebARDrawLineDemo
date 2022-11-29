@@ -101,6 +101,10 @@
                 const secondPos = new THREE.Vector3();
                 const el = this.el
                 const cylinder = this.el.querySelector("a-cylinder")
+                
+                this.el.addEventListener("click", evt => {
+                alert("触发了点击事件");
+                })
 
                 const idx = setInterval(() => {
                     firstPos.copy(firstObj.object3D.position)
@@ -117,10 +121,7 @@
                     el.object3D.lookAt(firstPos)
                     el.object3D.position.copy(middle).add(firstObj.object3D.position)
                 }, 500)
-                const elem = document.querySelector("cylinder_1");
-                elem.addEventListener("click", function() {
-                    alert("点击了当前模型");
-                })    
+               
             }
         })
     </script>
