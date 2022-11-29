@@ -116,8 +116,8 @@
                     el.object3D.lookAt(firstPos)
                     el.object3D.position.copy(middle).add(firstObj.object3D.position)
                 }, 500)
-                const elem = this.el.querySelector("tunnel");
-                elem.addEventListener("click", evt => {
+                const elem = document.querySelector("tunnel");
+                elem.addEventListener("click", function() {
                     alert("点击了当前模型");
                 })
             }
