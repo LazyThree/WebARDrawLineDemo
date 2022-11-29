@@ -147,6 +147,27 @@
                 })
             }
         })
+        
+        
+        //添加了小球
+        AFRAME.registerComponent("sphere1",{
+            init:function()
+            {
+                this.el.addEventListener('click',function(){
+                    var elem = getElementById("#gpsinfo");
+                    elem.innerHTML ="点击了蓝色小球";
+                })
+            }
+        })
+        AFRAME.registerComponent("sphere2",{
+            init:function()
+            {
+                this.el.addEventListener('click',function(){
+                    var elem = getElementById("#gpsinfo");
+                    elem.innerHTML ="点击了绿色小球";
+                })
+            }
+        })
     
     </script>
 </head>
@@ -163,13 +184,13 @@
     relative-position arc
     >
         <a-entity id="first">
-            <a-sphere scale="5 5 5" color="blue" cursor-listener></a-sphere>
+            <a-sphere scale="5 5 5" color="blue" sphere1></a-sphere>
         </a-entity>
         <a-entity id="tunnel" tunnel cursor-listener>
             <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1"></a-cylinder>
         </a-entity>
         <a-entity id="second">
-            <a-sphere scale="5 5 5" color="green" cursor-listener></a-sphere>
+            <a-sphere scale="5 5 5" color="green" sphere2></a-sphere>
         </a-entity>
         <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
