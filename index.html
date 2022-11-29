@@ -117,10 +117,10 @@
                     el.object3D.lookAt(firstPos)
                     el.object3D.position.copy(middle).add(firstObj.object3D.position)
                 }, 500)
-                const elem = document.querySelector("tunnel");
+                const elem = document.querySelector("cylinder_1");
                 elem.addEventListener("click", function() {
                     alert("点击了当前模型");
-                })
+                })    
             }
         })
     </script>
@@ -138,7 +138,7 @@
             <a-sphere scale="5 5 5" color="blue"></a-sphere>
         </a-entity>
         <a-entity id="tunnel" tunnel>
-            <a-cylinder color="red" radius="4" rotation="0 90 -90"></a-cylinder>
+            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1"></a-cylinder>
         </a-entity>
         <a-entity id="second">
             <a-sphere scale="5 5 5" color="green"></a-sphere>
