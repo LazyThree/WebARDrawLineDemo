@@ -150,7 +150,7 @@
         })*/
         
         
-         AFRAME.registerComponent("first",{
+         AFRAME.registerComponent("sphere1",{
             init:function()
             {
                 const curm = this.el.querySelector("a-sphere")
@@ -160,7 +160,7 @@
                 })
             }
         })
-        AFRAME.registerComponent("second",{
+        AFRAME.registerComponent("sphere2",{
             init:function()
             {
                 const curm = this.el.querySelector("a-sphere")
@@ -185,13 +185,13 @@
     arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
     relative-position arc
     >
-        <a-entity id="first" first>
+        <a-entity id="first" sphere1>
             <a-sphere scale="5 5 5" color="blue" id="sphere1"></a-sphere>
         </a-entity>
         <a-entity id="tunnel" tunnel>
             <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1"></a-cylinder>
         </a-entity>
-        <a-entity id="second" second>
+        <a-entity id="second" sphere2>
             <a-sphere scale="5 5 5" color="green" id="sphere2"></a-sphere>
         </a-entity>
         <a-camera gps-camera rotation-reader> </a-camera>
