@@ -20,26 +20,7 @@
             }
         }
         
-        AFRAME.registerComponent("sphere1",{
-            init:function()
-            {
-                const curm = this.el.querySelector("a-sphere")
-                curm.addEventListener('click',function(){
-                    var elem = getElementById("#gpsinfo");
-                    elem.innerHTML ="点击了蓝色小球";
-                })
-            }
-        })
-        AFRAME.registerComponent("sphere2",{
-            init:function()
-            {
-                const curm = this.el.querySelector("a-sphere")
-                curm.addEventListener('click',function(){
-                    var elem = getElementById("#gpsinfo");
-                    elem.innerHTML ="点击了绿色小球";
-                })
-            }
-        })
+
         
         AFRAME.registerComponent("relative-position", {
             init: function () {
@@ -112,10 +93,7 @@
                     el.object3D.add(mesh)
                     const line = new THREE.Line(geometry, material);
                 }, 500)
-                this.el.addEventListener('click',function()
-                {
-                    alert("点击了弧段信息!");
-                })
+               
             }
         })
         AFRAME.registerComponent("tunnel", {
@@ -167,6 +145,28 @@
                 
                 
 
+                })
+            }
+        })
+        
+        //添加一个小球
+        AFRAME.registerComponent("sphere1",{
+            init:function()
+            {
+                
+                this.el.addEventListener('click',function(){
+                    var elem = getElementById("#gpsinfo");
+                    elem.innerHTML ="点击了蓝色小球";
+                })
+            }
+        })
+        AFRAME.registerComponent("sphere2",{
+            init:function()
+            {
+                
+                this.el.addEventListener('click',function(){
+                    var elem = getElementById("#gpsinfo");
+                    elem.innerHTML ="点击了绿色小球";
                 })
             }
         })
