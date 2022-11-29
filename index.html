@@ -112,7 +112,10 @@
                     el.object3D.add(mesh)
                     const line = new THREE.Line(geometry, material);
                 }, 500)
-
+                this.el.addEventListener('click',function()
+                {
+                    alert("点击了弧段信息!");
+                })
             }
         })
         AFRAME.registerComponent("tunnel", {
