@@ -103,12 +103,9 @@
                 const cylinder = this.el.querySelector("a-cylinder")
                 cylinder.addEventListener('click', function()
                 {
-                    alert("点击了管道，触发了点击事件!");
-                })
-                const elem = this.el.querySelector("#cylinder_1")
-    
-                elem.addEventListener("click", function() {
-                    alert("点击了管道");
+                    //alert("点击了管道，触发了点击事件!");
+                    var elem = document.getElementById("gpsinfo");
+                    elem.innerHTML="当前查看的管道是一根红色的管道";
                 })
                 const idx = setInterval(() => {
                     firstPos.copy(firstObj.object3D.position)
@@ -159,7 +156,7 @@
         <a-entity id="first">
             <a-sphere scale="5 5 5" color="blue" cursor-listener></a-sphere>
         </a-entity>
-        <a-entity id="tunnel" tunnel>
+        <a-entity id="tunnel" tunnel cursor-listener>
             <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1"></a-cylinder>
         </a-entity>
         <a-entity id="second">
