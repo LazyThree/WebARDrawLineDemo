@@ -153,8 +153,8 @@
          AFRAME.registerComponent("first",{
             init:function()
             {
-                const model = this.el.querySelector("a-sphere")
-                model.addEventListener('click',function(){
+                const curm = this.el.querySelector("a-sphere")
+                curm.addEventListener('click',function(){
                     var elem = getElementById("#gpsinfo");
                     elem.innerHTML ="点击了蓝色小球";
                 })
@@ -163,8 +163,8 @@
         AFRAME.registerComponent("second",{
             init:function()
             {
-                const model = this.el.querySelector("a-sphere")
-                model.addEventListener('click',function(){
+                const curm = this.el.querySelector("a-sphere")
+                curm.addEventListener('click',function(){
                     var elem = getElementById("#gpsinfo");
                     elem.innerHTML ="点击了绿色小球";
                 })
