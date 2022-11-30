@@ -129,15 +129,10 @@
                 const cylinder = this.el.querySelector("a-cylinder")
                 cylinder.addEventListener('click', function()
                 {
-                    
-                    
-                    if (cylinder && intersectedElement === cylinder) {
                         cylinder.setAttribute('color', 'yellow');
                         var elem = document.getElementById("#gpsinfo");
                         elem.innerHTML="当前查看的管道是一根红色的管道";
                         alert("点击了管道，触发了点击事件!");
-                    }
-
                 })
                 const idx = setInterval(() => {
                     firstPos.copy(firstObj.object3D.position)
