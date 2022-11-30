@@ -118,7 +118,8 @@
                 })
             }
         })
-        
+        var flag = 0;
+
         AFRAME.registerComponent("tunnel", {
             init: function () {
                 const firstObj = document.getElementById("first");
@@ -132,8 +133,16 @@
                 cylinder.addEventListener('click', function(ev,target)
                 {
                         const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-                        
-                        cylinder.setAttribute('color', 'yellow');
+                        if(flag==0)
+                        {
+                          cylinder.setAttribute('color', 'yellow');
+                          flag = 1;
+                        }
+                        else
+                        {
+                          cylinder.setAttribute('color', 'red');
+                          flag = 0;
+                        }
                         var elem = document.getElementById("#gpsinfo");
                         elem.innerHTML="当前查看的管道是一根红色的管道";
                         //alert("点击了管道，触发了点击事件!");
