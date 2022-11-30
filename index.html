@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>GeoAR.js demo</title>
-    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.3.0/aframe.min.js"></script>
     <script src="https://unpkg.com/aframe-look-at-component@0.8.0/dist/aframe-look-at-component.min.js"></script>
     <script src="https://raw.githack.com/AR-js-org/AR.js/3.3.1/aframe/build/aframe-ar-nft.js"></script>
     <script src="https://unpkg.com/aframe-event-set-component@5.0.0/dist/aframe-event-set-component.min.js"></script>
@@ -201,7 +201,7 @@
         <a-entity id="first" sphere1 emitevents="true" cursor="rayOrigin: mouse">
             <a-sphere scale="5 5 5" color="blue"></a-sphere>
         </a-entity>
-        <a-entity id="tunnel" tunnel emitevents="true" cursor="rayOrigin: mouse">
+        <a-entity id="tunnel" tunnel>
             <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1" emitevents="true" cursor="rayOrigin: mouse"></a-cylinder>
         </a-entity>
         <a-entity id="second" sphere2 emitevents="true" cursor="rayOrigin: mouse">
