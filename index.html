@@ -18,9 +18,6 @@
                 lon: new_longitude
             }
         }
-        
-
-        
         AFRAME.registerComponent("relative-position", {
             init: function () {
                 const firstObj = document.getElementById("first");
@@ -35,8 +32,8 @@
                     console.log(`More or less ${crd.accuracy} meters.`);
                     document.getElementById("#gpsinfo").innerHTML = `Latitude : ${crd.latitude}, longitude: ${crd.longitude} (accuracy ${crd.accuracy.toFixed(2)} m.)`
 
-                    const firstCoords = shiftPositionBy(crd, -50, 25);
-                    const secondCoords = shiftPositionBy(crd, 25, 50);
+                    const firstCoords = shiftPositionBy(crd, 50, -25);
+                    const secondCoords = shiftPositionBy(crd, -25, -50);
 
                     firstObj.setAttribute("gps-entity-place", {
                         "latitude": firstCoords.lat,
@@ -92,53 +89,18 @@
                     el.object3D.add(mesh)
                     const line = new THREE.Line(geometry, material);
                 }, 500)
-               
+
             }
         })
-        //添加一个小球
-        AFRAME.registerComponent("sphere1",{
-            init:function()
-            {
-                const sphere = this.el.querySelector("a-sphere")
-                
-                sphere.addEventListener('click',function(){
-                    var elem = getElementById("#gpsinfo");
-                    elem.innerHTML ="点击了蓝色小球";
-                })
-            }
-        })
-        AFRAME.registerComponent("sphere2",{
-            init:function()
-            {
-                const sphere = this.el.querySelector("a-sphere")
-                sphere.addEventListener('click',function(){
-                    var elem = getElementById("#gpsinfo");
-                    elem.innerHTML ="点击了绿色小球";
-                })
-            }
-        })
-        
-        
         AFRAME.registerComponent("tunnel", {
-            var flag = 0;
             init: function () {
                 const firstObj = document.getElementById("first");
                 const secondObj = document.getElementById("second")
                 const firstPos = new THREE.Vector3();
                 const secondPos = new THREE.Vector3();
-                const el = this.el;
-                const cylinder = this.el.querySelector("a-cylinder");
- 
-                
-                cylinder.addEventListener('click', function(ev,target)
-                {
-                        const intersectedElement = ev && ev.detail && ev.detail.intersectedEl;
-                        cylinder.setAttribute('color', 'yellow');
-                        var elem = document.getElementById("#gpsinfo");
-                        elem.innerHTML="当前查看的管道是一根红色的管道";
-                        //alert("点击了管道，触发了点击事件!");
-                        
-                })
+                const el = this.el
+                const cylinder = this.el.querySelector("a-cylinder")
+                //每0.5毫秒执行以下当下操作，首先获取的是Obj3D的位置信息
                 const idx = setInterval(() => {
                     firstPos.copy(firstObj.object3D.position)
                     secondPos.copy(secondObj.object3D.position)
@@ -154,29 +116,26 @@
                     el.object3D.lookAt(firstPos)
                     el.object3D.position.copy(middle).add(firstObj.object3D.position)
                 }, 500)
-               
             }
         })
-
     </script>
 </head>
 
 <body>
     <div style='top: 10px; text-align: center; z-index: 100; color: wheat; position: absolute'>
+        Source code <a href="https://github.com/gftruj/webzamples/tree/master/ar">here</a><br>
         <p id="#gpsinfo"></p>
+        a-frame spheres, cylinder, and a THREE.js generated arc. <br>
     </div>
-    <a-scene 
-    vr-mode-ui="enabled: false" 
-    arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
-    relative-position arc
-    >
-        <a-entity id="first" sphere1 emitevents="true" cursor="rayOrigin: mouse">
+    <a-scene vr-mode-ui="enabled: false" arjs="sourceType: webcam; videoTexture: true; debugUIEnabled: false;"
+        relative-position arc>
+        <a-entity id="first">
             <a-sphere scale="5 5 5" color="blue"></a-sphere>
         </a-entity>
         <a-entity id="tunnel" tunnel>
-            <a-cylinder color="red" radius="4" rotation="0 90 -90" id="cylinder_1" emitevents="true" cursor="rayOrigin: mouse"></a-cylinder>
+            <a-cylinder color="red" radius="4" rotation="0 90 -90"></a-cylinder>
         </a-entity>
-        <a-entity id="second" sphere2 emitevents="true" cursor="rayOrigin: mouse">
+        <a-entity id="second">
             <a-sphere scale="5 5 5" color="green"></a-sphere>
         </a-entity>
         <a-camera gps-camera rotation-reader> </a-camera>
