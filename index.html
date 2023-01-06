@@ -94,10 +94,10 @@
         })
         AFRAME.registerComponent("tunnel", {
             init: function () {
-                const entity = document.getElementById("tunnel");
-                entity.setAttribute('position', '0 -10 0');
                 const firstObj = document.getElementById("first");
-                const secondObj = document.getElementById("second")
+                const secondObj = document.getElementById("second");
+                firstObj.setAttribute('position', '0 -10 0');
+                secondObj.setAttribute('position', '0 -10 0');
                 const firstPos = new THREE.Vector3();
                 const secondPos = new THREE.Vector3();
                 const el = this.el
