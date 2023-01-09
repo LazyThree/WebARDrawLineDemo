@@ -35,13 +35,15 @@
                     const firstCoords = shiftPositionBy(crd, -50, 25);
                     const secondCoords = shiftPositionBy(crd, 25, 50);
 
+
+                    
                     firstObj.setAttribute("gps-entity-place", {
-                        "latitude": firstCoords.lat,
-                        "longitude": firstCoords.lon
+                        "latitude": 30.265360,
+                        "longitude": 120.120530
                     })
                     secondObj.setAttribute("gps-entity-place", {
-                        "latitude": secondCoords.lat,
-                        "longitude": secondCoords.lon
+                        "latitude": 30.265280,
+                        "longitude": 120.120810
                     })
                 }
 
@@ -96,8 +98,8 @@
             init: function () {
                 const firstObj = document.getElementById("first");
                 const secondObj = document.getElementById("second");
-                firstObj.setAttribute('position', '0 -0.5 0');
-                secondObj.setAttribute('position', '0 -0.5 0');
+                firstObj.setAttribute('position', '0 -5 0');
+                secondObj.setAttribute('position', '0 -5 0');
                 const firstPos = new THREE.Vector3();
                 const secondPos = new THREE.Vector3();
                 const el = this.el
@@ -140,7 +142,7 @@
         <a-entity id="second">
             <a-sphere scale="5 5 5" color="green"></a-sphere>
         </a-entity>
-        <a-camera fov="40" gps-camera rotation-reader> </a-camera>
+        <a-camera fov="85" gps-camera rotation-reader> </a-camera>
     </a-scene>
 </body>
 
