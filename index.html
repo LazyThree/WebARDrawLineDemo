@@ -38,12 +38,13 @@
 
                     
                     firstObj.setAttribute("gps-entity-place", {
+                        "latitude": 30.265350,
+                        "longitude": 120.121110
+                    })
+                    
+                    secondObj.setAttribute("gps-entity-place", {
                         "latitude": 30.265360,
                         "longitude": 120.120530
-                    })
-                    secondObj.setAttribute("gps-entity-place", {
-                        "latitude": 30.265280,
-                        "longitude": 120.120810
                     })
                 }
 
@@ -142,7 +143,7 @@
         <a-entity id="second">
             <a-sphere scale="5 5 5" color="green"></a-sphere>
         </a-entity>
-        <a-camera fov="85" gps-camera rotation-reader> </a-camera>
+        <a-camera gps-camera rotation-reader> </a-camera>
     </a-scene>
 </body>
 
